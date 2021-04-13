@@ -1,0 +1,13 @@
+{
+  "name": "jay4q",
+  "avatar": "/avatar.jpeg",
+  "github": "https://github.com/jay4q",
+  "description": "Stay Hungry, Stay Foolish",
+  "powerBy": [
+    { "icon": "🥞", "name": "Next.js", "href": "https://nextjs.org/" },
+    { "icon": "👨🏽‍🎨", "name": "Tailwindcss", "href": "https://tailwindcss.com" },
+    { "icon": "✍🏼", "name": "Typescript", "href": "https://www.typescriptlang.org/" },
+    { "icon": "📦", "name": "Github", "href": "https://github.com/jay4q/blog" },
+    { "icon": "🚆", "name": "Vercel", "href": "https://vercel.com/" }
+  ]
+}

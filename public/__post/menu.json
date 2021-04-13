@@ -1,0 +1,30 @@
+[
+  {
+    "sort": 1,
+    "title": "介绍",
+    "enTitle": "about",
+    "icon": "🧑🏽‍💻",
+    "cover": ""
+  },
+  {
+    "sort": 2,
+    "title": "项目",
+    "enTitle": "project",
+    "icon": "🧑‍🍳",
+    "cover": "./project/cover.jpg"
+  },
+  {
+    "sort": 3,
+    "title": "想法",
+    "enTitle": "ideas",
+    "icon": "🤔",
+    "cover": "./ideas/cover.jpg"
+  },
+  {
+    "sort": 4,
+    "title": "娱乐",
+    "enTitle": "gaming",
+    "icon": "🎮",
+    "cover": "./gaming/cover.jpg"
+  }
+]
