@@ -44,7 +44,10 @@ const MobileMenu: FunctionComponent<Props> = ({ menus }) => {
   return (
     <div className='w-full h-full flex flex-row items-center justify-between px-6 lg:hidden'>
       <h1 className='font-black text-4xl'>J</h1>
-      <BiMenuAltRight className='w-9 h-9' onClick={onOpen} />
+      <div className='flex flex-row items-center' onClick={onOpen}>
+        <BiMenuAltRight className='w-9 h-9 mr-1' />
+        <h2 className='text-lg font-semibold'>Menu</h2>
+      </div>
       <div
         className={classNames('fixed z-50 w-screen h-screen top-0 left-0 transition-easy backdrop-filter', visible ? 'backdrop-blur' : 'backdrop-blur-0')}
         style={{ visibility: visible ? 'visible' : 'hidden' }}
@@ -52,7 +55,7 @@ const MobileMenu: FunctionComponent<Props> = ({ menus }) => {
         <div onClick={onClose} className={classNames('absolute w-full h-full top-0 left-0 transition-easy')}></div>
         <div className={classNames('absolute top-24 right-8 w-52 bg-paper border-black border-2 transform origin-top-right transition-easy', visible ? 'scale-100 opacity-100' : 'scale-90 opacity-0')}>
           <a className='flex items-center justify-center w-full h-10 bg-black' href={siteMetas.github} target='__blank'>
-            <RiGithubFill className='text-white w-7 h-7' />
+            <RiGithubFill className='text-white w-8 h-8' />
           </a>
           {
             menus.map(item => (
