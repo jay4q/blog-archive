@@ -5,7 +5,6 @@ import { getPostBySlug, markdown2Html } from '@/apis/post'
 import { siteMetas } from '@/apis/constant'
 import { getConsoleTxt } from '@/apis/console'
 import { MdxRemote } from 'next-mdx-remote/types'
-import { upperFirstLetter } from '@/utils'
 
 type Props = {
   /**
@@ -35,9 +34,8 @@ const Index: FunctionComponent<Props> = ({ consoleTxt, source }) => {
   return (
     <Fragment>
       <Head>
-        <title>{upperFirstLetter(siteMetas.name)}'s Blog</title>
+        <title>{siteMetas.name}'s Blog</title>
       </Head>
-      <div className='bg-pri'></div>
       {/* <Post className='mb-16' source={source} /> */}
     </Fragment>
   )

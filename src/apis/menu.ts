@@ -10,20 +10,6 @@ type MdFields = {
 }
 
 /**
- * 获取菜单的真实路径
- * @param en 
- */
-export const getRealURL = (en: string) => {
-  const menuUrlPrefix = '/menu'
-
-  if (en === 'about') {
-    return '/'
-  } else {
-    return menuUrlPrefix + '/' + en
-  }
-}
-
-/**
  * 获取排序后的菜单
  * @param menu 
  */
@@ -63,7 +49,7 @@ export const getMenuBySlug = (slug: string, fields: string[]) => {
 /**
  * 获取所有菜单名称
  */
- export const getAllMenuSlugs = () => {
+export const getAllMenuSlugs = () => {
   try {
     const slugs = fs.readdirSync(postsDirectory).filter(menu => !menu.includes('.'))  // 只获取菜单
     return slugs

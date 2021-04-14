@@ -9,9 +9,9 @@
   {
     "sort": 2,
     "title": "项目",
-    "enTitle": "project",
+    "enTitle": "projects",
     "icon": "🧑‍🍳",
-    "cover": "./project/cover.jpg"
+    "cover": "./projects/cover.jpg"
   },
   {
     "sort": 3,
@@ -22,9 +22,9 @@
   },
   {
     "sort": 4,
-    "title": "娱乐",
-    "enTitle": "gaming",
+    "title": "生活",
+    "enTitle": "awesome",
     "icon": "🎮",
-    "cover": "./gaming/cover.jpg"
+    "cover": "./awesome/cover.jpg"
   }
 ]

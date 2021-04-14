@@ -16,6 +16,7 @@ export interface PowerByModel {
 
 export interface SiteMetaModel {
   name: string
+  firstName: string
   avatar: string
   github: string
   description: string

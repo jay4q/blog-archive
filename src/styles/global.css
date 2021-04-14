@@ -4,11 +4,27 @@
 
 @layer components {
   .transition-easy {
-    @apply transition-all ease-in-out duration-300;
+    @apply transition-all ease-in-out duration-500;
   }
-  
-  .container-base {
-    @apply container max-w-3xl px-6 mx-auto;
+
+  .container-inner {
+    @apply container max-w-6xl mx-auto border-l-2 border-r-2;
+  }
+
+  .container-outter {
+    @apply container max-w-7xl mx-auto border-l-2 border-r-2;
+  }
+
+  .container-border {
+    @apply fixed top-0 bottom-0 left-1/2 border-l-2 border-r-2 border-black transform -translate-x-1/2;
+  }
+
+  .trim-h {
+    @apply border-t-2 border-b-2;
+  }
+
+  .trim-w {
+    @apply xl:border-l-2 xl:border-r-2;
   }
 }
 
@@ -16,10 +32,19 @@
 
 html {
   user-select: none;
+  background-color: #f1e6d6;
 }
 
 *:focus {
   -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  border-color: transparent;
+}
+
+#__next {
+  position: relative;
 }
 
 /* 自定义样式 */
@@ -35,11 +60,11 @@ html {
 /* 覆盖第三方组件 */
 
 #nprogress .bar {
-  background-color: theme('colors.black');
+  background-color: theme("colors.black");
 }
 
 #nprogress .peg {
-  box-shadow: 0 0 10px theme('colors.black'), 0 0 5px theme('colors.black');
+  box-shadow: 0 0 10px theme("colors.black"), 0 0 5px theme("colors.black");
 }
 
 .medium-zoom-overlay,
