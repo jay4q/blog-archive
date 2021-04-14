@@ -4,27 +4,7 @@
 
 @layer components {
   .transition-easy {
-    @apply transition-all ease-in-out duration-500;
-  }
-
-  .container-inner {
-    @apply container max-w-6xl mx-auto border-l-2 border-r-2;
-  }
-
-  .container-outter {
-    @apply container max-w-7xl mx-auto border-l-2 border-r-2;
-  }
-
-  .container-border {
-    @apply fixed top-0 bottom-0 left-1/2 border-l-2 border-r-2 border-black transform -translate-x-1/2;
-  }
-
-  .trim-h {
-    @apply border-t-2 border-b-2;
-  }
-
-  .trim-w {
-    @apply xl:border-l-2 xl:border-r-2;
+    @apply transition-all ease-in-out duration-300;
   }
 }
 
@@ -32,7 +12,7 @@
 
 html {
   user-select: none;
-  background-color: #f1e6d6;
+  background-color: theme('colors.paper');
 }
 
 *:focus {

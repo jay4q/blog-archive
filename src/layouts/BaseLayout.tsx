@@ -2,7 +2,7 @@ import { siteMetas } from '@/apis/constant'
 import { MenuModel } from '@/apis/types'
 import Link from 'next/link'
 import { Fragment, FunctionComponent } from 'react'
-import { RiGithubFill } from 'react-icons/ri'
+import { RiGithubFill, RiBilibiliFill } from 'react-icons/ri'
 import { BiMenuAltRight } from 'react-icons/bi'
 import classNames from 'classnames'
 import { useBoolean } from 'ahooks'
@@ -39,17 +39,32 @@ const DesktopMenu: FunctionComponent<Props> = ({ menus }) => {
 }
 
 const MobileMenu: FunctionComponent<Props> = ({ menus }) => {
-  const [visible, { setFalse: onClose }] = useBoolean(true)
+  const [visible, { setFalse: onClose, setTrue: onOpen }] = useBoolean(false)
 
   return (
     <div className='w-full h-full flex flex-row items-center justify-between px-6 lg:hidden'>
-      <h1 className='font-black text-5xl'>J</h1>
-      <BiMenuAltRight className='w-11 h-11' />
+      <h1 className='font-black text-4xl'>J</h1>
+      <BiMenuAltRight className='w-9 h-9' onClick={onOpen} />
       <div
         className={classNames('fixed z-50 w-screen h-screen top-0 left-0 transition-easy backdrop-filter', visible ? 'backdrop-blur' : 'backdrop-blur-0')}
         style={{ visibility: visible ? 'visible' : 'hidden' }}
       >
         <div onClick={onClose} className={classNames('absolute w-full h-full top-0 left-0 transition-easy')}></div>
+        <div className={classNames('absolute top-24 right-8 w-52 bg-paper border-black border-2 transform origin-top-right transition-easy', visible ? 'scale-100 opacity-100' : 'scale-90 opacity-0')}>
+          <a className='flex items-center justify-center w-full h-10 bg-black' href={siteMetas.github} target='__blank'>
+            <RiGithubFill className='text-white w-7 h-7' />
+          </a>
+          {
+            menus.map(item => (
+              <Link key={item.enTitle} href={getRealURL(item.enTitle)}>
+                <a className='flex flex-row items-center w-full border-b-2 border-black last:border-b-0' onClick={onClose}>
+                  <span className='h-12 w-12 border-r-2 border-black flex items-center justify-center'>{item.icon}</span>
+                  <span className='ml-4 text-base tracking-wide font-semibold'>{item.enTitle.toUpperCase()}</span>
+                </a>
+              </Link>
+            ))
+          }
+        </div>
       </div>
     </div>
   )

@@ -4,6 +4,9 @@ module.exports = {
   // darkMode: 'media',
   theme: {
     extend: {
+      colors: {
+        'paper': '#f1e6d6'
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {

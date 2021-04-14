@@ -31,7 +31,7 @@ const MenuPage: FunctionComponent<Props> = ({ menu, posts, cover }) => {
   return (
     <Fragment>
       <Head>
-        <title>{menu.title}</title>
+        <title>{menu.title}｜{menu.enTitle.toUpperCase()}</title>
       </Head>
     </Fragment>
   )
