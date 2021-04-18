@@ -4,6 +4,7 @@ import { getImageUrl, getBlurImage, getImageRatio } from '@/apis/image'
 import { staticMenus } from '@/apis/constant'
 import { getPostsByMenu } from '@/apis/post'
 import { MenuModel, PostModel } from '@/apis/types'
+import { FullSizeImage } from '@/components/Image'
 
 type Props = {
   /**
@@ -22,17 +23,26 @@ type Props = {
   cover: CoverImageInfo
 }
 
+const Item: FunctionComponent = () => {
+  return (
+    <li>
+
+    </li>
+  )
+}
+
 /**
  * 菜单页
  */
 const MenuPage: FunctionComponent<Props> = ({ menu, posts, cover }) => {
-  console.log(menu, posts, cover)
-
   return (
     <Fragment>
       <Head>
         <title>{menu.title}｜{menu.enTitle.toUpperCase()}</title>
       </Head>
+      <FullSizeImage {...cover} enableZoom={false} />
+      <div className='lg:-mr-16 lg:-ml-16 h-16 border-black border-t-2 border-b-2 flex flex-row items-center justify-center font-bold text-lg tracking-wide'>{menu.icon}&ensp;{menu.enTitle.toUpperCase()}</div>
+      <ul className='lg:p-8 p-6'></ul>
     </Fragment>
   )
 }

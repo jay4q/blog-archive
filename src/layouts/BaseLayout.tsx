@@ -46,7 +46,7 @@ const MobileMenu: FunctionComponent<Props> = ({ menus }) => {
       <h1 className='font-black text-4xl'>J</h1>
       <div className='flex flex-row items-center' onClick={onOpen}>
         <BiMenuAltRight className='w-9 h-9 mr-1' />
-        <h2 className='text-lg font-semibold'>Menu</h2>
+        <h2 className='text-lg font-bold'>Menu</h2>
       </div>
       <div
         className={classNames('fixed z-50 w-screen h-screen top-0 left-0 transition-easy backdrop-filter', visible ? 'backdrop-blur' : 'backdrop-blur-0')}
@@ -93,7 +93,7 @@ export const BaseLayout: FunctionComponent<Props> = ({ menus, children }) => {
         </div>
       </div>
       <footer className='flex items-center justify-center absolute bottom-8 left-0 w-full h-16 border-black border-t-2 border-b-2'>
-        <h1 className='text-base font-semibold'>{copyright}</h1>
+        <h1 className='text-base font-bold'>{copyright}</h1>
       </footer>
     </Fragment>
   )

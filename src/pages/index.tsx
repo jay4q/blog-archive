@@ -38,12 +38,12 @@ const Index: FunctionComponent<Props> = ({ consoleTxt, source }) => {
       <Head>
         <title>{siteMetas.name}'s blog</title>
       </Head>
-      <div className='w-full p-8 pt-16'>
-        <h2 className='text-6xl font-black mb-6 tracking-wide'>{upperFirstLetter(siteMetas.name)} {upperFirstLetter(siteMetas.firstName)}</h2>
-        <h3 className='text-2xl font-medium text-gray-800 tracking-wide'>{siteMetas.description}</h3>
+      <div className='w-full p-6 pt-12 lg:p-8 lg:pt-16'>
+        <h2 className='text-5xl lg:text-6xl font-black mb-6 tracking-wide'>{upperFirstLetter(siteMetas.name)} {upperFirstLetter(siteMetas.firstName)}</h2>
+        <h3 className='text-xl lg:text-2xl font-bold tracking-wide'>{siteMetas.description}</h3>
       </div>
       <div className='lg:-mr-16 lg:-ml-16 h-16 border-black border-t-2 border-b-2'></div>
-      <Post className='p-8' source={source} />
+      <Post className='lg:p-8 p-6' source={source} />
     </Fragment>
   )
 }

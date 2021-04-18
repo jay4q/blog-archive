@@ -15,6 +15,9 @@ module.exports = {
               color: theme('colors.black'),
               // boxShadow: '0 1px 0 0 currentColor',
             },
+            p: {
+              color: theme('colors.black'),
+            }
           },
         },
       }),

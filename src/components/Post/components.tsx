@@ -17,15 +17,30 @@ export const components: MdxRemote.Components = {
     )
   },
   strong: (props: { children: string }) => {
-    return <strong className='bg-red-300 py-1 px-2'>{props.children}</strong>
+    return <strong className='bg-red-300 px-1'>{props.children}</strong>
   },
   a: (props: { href: string, children: string }) => {
-    console.log(props)
     return (
-      <a href={props.href} className='relative py-1 px-2 group' target='__blank'>
-        <span className='absolute bottom-0 left-0 w-full h-full bg-blue-300 transition-easy transform origin-bottom scale-y-[.35] group-hover:scale-y-100'></span>
+      <a href={props.href} className='relative px-1 group' target='__blank'>
+        <span className='absolute bottom-0 left-0 w-full h-full bg-blue-300 transition-easy transform origin-bottom scale-y-[.3] group-hover:scale-y-100'></span>
         <span className='relative'>{props.children}</span>
       </a>
+    )
+  },
+  h2: (props: { children: string }) => {
+    return (
+      <h2 className='relative'>
+        <span className='absolute bottom-0 -left-1 w-12 h-3 bg-red-300'></span>
+        <span className='relative'>{props.children}</span>
+      </h2>
+    )
+  },
+  inlineCode: (props: { children: string }) => {
+    return (
+      <code className='relative'>
+        <span className='absolute bottom-0 w-8 h-2 bg-green-300'></span>
+        <span className='relative'>{props.children}</span>
+      </code>
     )
   }
 }

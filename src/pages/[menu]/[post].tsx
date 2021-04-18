@@ -4,11 +4,9 @@ import { MenuModel, PostModel } from '@/apis/types'
 import Head from 'next/head'
 import { Fragment, FunctionComponent } from 'react'
 import dayjs from 'dayjs'
-import { NothingHere } from '@/components/NothingHere'
 import { MdxRemote } from 'next-mdx-remote/types'
 import { Post } from '@/components/Post'
 import { FullSizeImage } from '@/components/Image'
-import classNames from 'classnames'
 import { staticMenus } from '@/apis/constant'
 
 type Props = {
@@ -21,12 +19,12 @@ type Props = {
    * 文章信息
    */
   post: PostModel
-  
+
   /**
    * Markdown 渲染信息
    */
   source: MdxRemote.Source
-  
+
   /**
    * 封面信息
    */
@@ -48,23 +46,16 @@ const PostPage: FunctionComponent<Props> = ({ post, source, cover }) => {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <h1 className='font-bold text-2xl mb-2 dark:text-white'>{post.title}</h1>
-      <h2 className='text-xs text-gray-400 mb-4 dark:text-gray-500'>{createAt} • {post.readingTime}</h2>
+      <div className='w-full p-6 lg:p-8'>
+        <h2 className='text-2xl lg:text-3xl font-bold tracking-wide'>{post.title}</h2>
+      </div>
+      <div className='lg:-mr-16 lg:-ml-16 h-16 border-black border-t-2 border-b-2 flex flex-row items-center pl-6 lg:pl-24'>
+        <h3 className='text-base lg:text-lg font-bold tracking-wide'>{createAt} • {post.readingTime}</h3>
+      </div>
       {
-        cover && (
-          <FullSizeImage
-            src={cover.src}
-            blurSrc={cover.b64}
-            ratio={cover.ratio}
-            className='mb-8'
-          />
-        )
+        cover && <FullSizeImage {...cover} className='border-b-2 border-black' />
       }
-      {
-        !post.content
-          ? <NothingHere className='pb-0' /> :
-          <Post className={classNames('mb-16', !cover && 'mt-12')} source={source} />
-      }
+      <Post className='lg:p-8 p-6' source={source} />
     </Fragment>
   )
 }

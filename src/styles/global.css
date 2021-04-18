@@ -27,16 +27,6 @@ html {
   position: relative;
 }
 
-/* 自定义样式 */
-
-@media (max-width: 640px) {
-  /* 移动端图片填满显示宽度 */
-  .full-size-image {
-    margin-left: -1.5rem;
-    width: calc(100% + 3rem);
-  }
-}
-
 /* 覆盖第三方组件 */
 
 #nprogress .bar {
@@ -54,4 +44,5 @@ html {
 
 .medium-zoom-overlay {
   @apply backdrop-filter backdrop-blur;
+  background-color: transparent !important;
 }
