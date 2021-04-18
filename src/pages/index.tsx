@@ -5,6 +5,8 @@ import { getPostBySlug, markdown2Html } from '@/apis/post'
 import { siteMetas } from '@/apis/constant'
 import { getConsoleTxt } from '@/apis/console'
 import { MdxRemote } from 'next-mdx-remote/types'
+import { upperFirstLetter } from '@/utils'
+import { Post } from '@/components/Post'
 
 type Props = {
   /**
@@ -16,7 +18,7 @@ type Props = {
    * 个人介绍
    */
   post: PostModel
-  
+
   /**
    * Markdown 渲染信息
    */
@@ -34,9 +36,14 @@ const Index: FunctionComponent<Props> = ({ consoleTxt, source }) => {
   return (
     <Fragment>
       <Head>
-        <title>{siteMetas.name}'s Blog</title>
+        <title>{siteMetas.name}'s blog</title>
       </Head>
-      {/* <Post className='mb-16' source={source} /> */}
+      <div className='w-full p-8 pt-16'>
+        <h2 className='text-6xl font-black mb-6 tracking-wide'>{upperFirstLetter(siteMetas.name)} {upperFirstLetter(siteMetas.firstName)}</h2>
+        <h3 className='text-2xl font-medium text-gray-800 tracking-wide'>{siteMetas.description}</h3>
+      </div>
+      <div className='lg:-mr-16 lg:-ml-16 h-16 border-black border-t-2 border-b-2'></div>
+      <Post className='p-8' source={source} />
     </Fragment>
   )
 }

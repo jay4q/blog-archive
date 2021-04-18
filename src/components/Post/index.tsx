@@ -16,7 +16,7 @@ export const Post: FunctionComponent<Props> = ({ source, className }) => {
   const content = hydrate(source, { components })
 
   return (
-    <article className={classNames('prose prose-pink max-w-full', className)}>
+    <article className={classNames('prose prose-lg lg:prose-xl max-w-full', className)}>
       {content}
     </article>
   )

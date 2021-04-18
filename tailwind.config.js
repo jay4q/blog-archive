@@ -12,8 +12,9 @@ module.exports = {
           css: {
             a: {
               textDecoration: 'none',
+              color: theme('colors.black'),
               // boxShadow: '0 1px 0 0 currentColor',
-            }
+            },
           },
         },
       }),
