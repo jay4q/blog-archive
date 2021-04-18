@@ -4,7 +4,9 @@ import { getImageUrl, getBlurImage, getImageRatio } from '@/apis/image'
 import { staticMenus } from '@/apis/constant'
 import { getPostsByMenu } from '@/apis/post'
 import { MenuModel, PostModel } from '@/apis/types'
-import { FullSizeImage } from '@/components/Image'
+import { BlurImage } from '@/components/Image'
+import dayjs from 'dayjs'
+import Link from 'next/link'
 
 type Props = {
   /**
@@ -16,33 +18,47 @@ type Props = {
    * 菜单下的所有文章
    */
   posts: PostModel[]
-
-  /**
-   * 封面信息
-   */
-  cover: CoverImageInfo
 }
 
-const Item: FunctionComponent = () => {
-  return (
-    <li>
+const Item: FunctionComponent<{ menu: MenuModel, post: PostModel }> = ({ menu, post }) => {
+  const createAt = dayjs(post.createTime).format('MMMM DD, YYYY')
 
-    </li>
+  return (
+    <Link href={`/${menu.enTitle}/${post.slug}`}>
+      <a className='group'>
+        <li className='w-full flex flex-row border-b-2 border-black'>
+          <BlurImage src={post.coverImage} blurSrc={post.b64Cover} className='flex-shrink-0 w-28 h-28 lg:w-48 lg:h-48 border-r-2 border-black' />
+          <div className='p-4 lg:p-8 flex-grow-1 tracking-wide transform transition-easy lg:group-hover:translate-x-2'>
+            <h1 className='text-lg lg:text-2xl font-bold line-clamp-2 mb-1 lg:mb-2'>{post.title}</h1>
+            <h2 className='text-sm lg:text-base font-bold text-black text-opacity-70 lg:mb-2'>{createAt} • {post.readingTime}</h2>
+            <h3 className='hidden text-sm lg:text-base font-bold text-black text-opacity-50 lg:line-clamp-2'>{post.intro}</h3>
+          </div>
+        </li>
+      </a>
+    </Link>
   )
 }
 
 /**
  * 菜单页
  */
-const MenuPage: FunctionComponent<Props> = ({ menu, posts, cover }) => {
+const MenuPage: FunctionComponent<Props> = ({ menu, posts }) => {
   return (
     <Fragment>
       <Head>
         <title>{menu.title}｜{menu.enTitle.toUpperCase()}</title>
       </Head>
-      <FullSizeImage {...cover} enableZoom={false} />
-      <div className='lg:-mr-16 lg:-ml-16 h-16 border-black border-t-2 border-b-2 flex flex-row items-center justify-center font-bold text-lg tracking-wide'>{menu.icon}&ensp;{menu.enTitle.toUpperCase()}</div>
-      <ul className='lg:p-8 p-6'></ul>
+      <div className='lg:-mx-16 lg:px-24 px-6 h-16 border-black border-b-2 flex flex-row items-center justify-between font-bold text-lg tracking-wide'>
+        <span>{menu.icon}&ensp;{menu.enTitle.toUpperCase()}</span>
+        <span>TOTAL: {posts.length}</span>
+      </div>
+      <ul className='w-full'>
+        {
+          posts.map(post => (
+            <Item key={post.slug} menu={menu} post={post} />
+          ))
+        }
+      </ul>
     </Fragment>
   )
 }
@@ -75,17 +91,6 @@ export const getStaticProps = async ({ params }: Params) => {
     }
   }
 
-  // 菜单封面处理
-  const cover = await (async () => {
-    if (!menu) return null
-
-    return {
-      src: await getImageUrl(menu.cover),
-      b64: await getBlurImage(menu.cover),
-      ratio: await getImageRatio(menu.cover),
-    }
-  })()
-
   if (posts.length > 0) {
     // 博客封面处理
     posts = await Promise.all(
@@ -108,7 +113,6 @@ export const getStaticProps = async ({ params }: Params) => {
   return {
     props: {
       menu,
-      cover,
       posts,
     }
   }
