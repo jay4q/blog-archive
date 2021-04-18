@@ -30,7 +30,7 @@ export const components: MdxRemote.Components = {
   h2: (props: { children: string }) => {
     return (
       <h2 className='relative'>
-        <span className='absolute bottom-0 -left-1 w-12 h-3 bg-red-300'></span>
+        <span className='absolute bottom-0 -left-1 w-12 h-3 bg-yellow-300'></span>
         <span className='relative'>{props.children}</span>
       </h2>
     )
