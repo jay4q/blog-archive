@@ -17,7 +17,22 @@ module.exports = {
             },
             p: {
               color: theme('colors.black'),
-            }
+            },
+            blockquote: {
+              borderLeftColor: theme('colors.black'),
+            },
+            'ul > li::before': {
+              backgroundColor: theme('colors.black'),
+            },
+            'ul > li': {
+              color: theme('colors.black'),
+            },
+            'ol > li::before': {
+              color: theme('colors.black'),
+            },
+            'ol > li': {
+              color: theme('colors.black'),
+            },
           },
         },
       }),
