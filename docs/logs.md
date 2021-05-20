@@ -3,6 +3,7 @@
 ## Todo-List
 
 + 🎉 add: 设计 LOGO
++ 🎉 add: JOJO 头像二维码，内容是微信号
 
 ## 2021.05.12
 
