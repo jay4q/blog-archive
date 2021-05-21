@@ -2,7 +2,7 @@ import { siteMetas } from '@/apis/constant'
 import { MenuModel } from '@/apis/types'
 import Link from 'next/link'
 import { Fragment, FunctionComponent } from 'react'
-import { RiGithubFill, RiBilibiliFill } from 'react-icons/ri'
+import { RiGithubFill } from 'react-icons/ri'
 import { BiMenuAltRight } from 'react-icons/bi'
 import classNames from 'classnames'
 import { useBoolean } from 'ahooks'
@@ -77,7 +77,7 @@ const MobileMenu: FunctionComponent<Props> = ({ menus }) => {
  * 网站的基础布局
  */
 export const BaseLayout: FunctionComponent<Props> = ({ menus, children }) => {
-  const copyright = `${siteMetas.name.toUpperCase()} @ ${new Date().getFullYear()}`
+  const copyright = `Powered by ${siteMetas.name} @ 2020-${new Date().getFullYear()}`
 
   return (
     <Fragment>
