@@ -12,21 +12,25 @@ intro: "它的目标是给微信头像或者朋友圈背景加个滤镜、小角
 
 这个工具能做什么呢？它的目标，就是给微信头像或者朋友圈背景加个滤镜、小角标，以展示自己有趣、有个性的一面 💅 。
 
-例如，创造一个8Bit像素风的头像
+![JOJO](./0.png)
+
+以上面这张吉良吉影的同人头像为例，我们可以：
+
+创造一个8Bit像素风的头像
 
 ![马赛克](./1.png)
 
-例如，创造一个黑客帝国画风的背景
+创造一个黑客帝国画风的背景
 
 ![黑客帝国](./2.png)
 
-同样这些效果可以相互叠加，发挥你的想象，制造出意想不到的效果～
+同样，这些效果可以相互叠加，发挥你的想象，制造出意想不到的效果～并且这些滤镜效果都是在客户端实时处理的，你根本感受不到延迟～
 
 项目地址：
 
-+ Github: [wechat-awesome](https://github.com/jay4q/wechat-awesome)
-+ 临时地址：[demo](https://dev-8gesrxwdc929eef0-1258640577.tcloudbaseapp.com/wa/#/)
-+ 正式地址：[微信个性化工具](https://app.jay4q.com/wa/)
++ [Github](https://github.com/jay4q/wechat-awesome)
++ [临时地址](https://dev-8gesrxwdc929eef0-1258640577.tcloudbaseapp.com/wa/#/)
++ [正式地址](https://app.jay4q.com/wa/)
 
 > 目前尚处于初级开发阶段，完成后会开放正式链接
 
