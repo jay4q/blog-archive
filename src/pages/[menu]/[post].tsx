@@ -100,7 +100,7 @@ export const getStaticProps = async ({ params }: Params) => {
     return {
       src: await getImageUrl(...args),
       b64: await getBlurImage(...args),
-      ratio: await getImageRatio(...args),
+      ratio: (await getImageRatio(...args)).ratio,
     }
   })()
 

@@ -11,7 +11,8 @@ export const components: MdxRemote.Components = {
       <FullSizeImage
         src={infos[0]}
         blurSrc={extraInfo.b64 as string}
-        ratio={Number(extraInfo.ratio as string)}
+        ratio={Number(extraInfo.ratio as string) || 1}
+        width={Number(extraInfo.width as string) || 0}
         className='my-8'
       />
     )

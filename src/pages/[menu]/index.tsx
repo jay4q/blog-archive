@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Fragment, FunctionComponent } from 'react'
-import { getImageUrl, getBlurImage, getImageRatio } from '@/apis/image'
+import { getImageUrl, getBlurImage } from '@/apis/image'
 import { staticMenus } from '@/apis/constant'
 import { getPostsByMenu } from '@/apis/post'
 import { MenuModel, PostModel } from '@/apis/types'

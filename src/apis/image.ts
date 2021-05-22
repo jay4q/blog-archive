@@ -12,6 +12,8 @@ type FixedImageType = {
   rawPath: string
   // 可用的图片请求路径
   realPath: string
+  // 原始宽度 px
+  width?: number
   // 宽高比
   ratio?: number
   // 占位图
@@ -48,9 +50,12 @@ export const getImageRatio = async (...paths: string[]) => {
   try {
     const realPath = join(baseDir, ...paths)
     const res = await sizeOf(realPath)
-    return (res.width || 1) / (res.height || 1)
+    return {
+      ratio: (res.width || 1) / (res.height || 1),
+      width: res.width
+    }
   } catch (e) {
-    return 1
+    return { ratio: 1, width: 0 }
   }
 }
 
@@ -82,11 +87,11 @@ export const fixImagesInContent = async (menu: string, post: string, content: st
         }
       }, [])
       // 获取 图片宽高比和占位图
-      .map(img => (
+      .map<Promise<FixedImageType>>(img => (
         (async () => {
-          const ratio = await getImageRatio(menu, post, img.rawPath)
+          const size = await getImageRatio(menu, post, img.rawPath)
           const b64 = await getBlurImage(menu, post, img.rawPath)
-          return { ...img, ratio, b64 }
+          return { ...img, ...size, b64 }
         })()
       ))
   ))
@@ -99,6 +104,7 @@ export const fixImagesInContent = async (menu: string, post: string, content: st
       {
         b64: img.b64,
         ratio: img.ratio,
+        width: img.width,
       },
       {
         skipEmptyString: true,
