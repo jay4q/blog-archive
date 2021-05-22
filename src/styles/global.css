@@ -77,7 +77,7 @@ html {
 }
 
 .__post .__h2 {
-  @apply inline;
+  @apply inline-block;
   background-color: transparent;
   background-image: linear-gradient(theme("colors.yellow.300"), theme("colors.yellow.300"));
   background-size: theme('width.12') theme('height.3');
