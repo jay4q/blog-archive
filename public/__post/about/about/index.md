@@ -8,6 +8,8 @@ updateTime: "2021-08-18"
 
 我的网名是 **jay4q**，是一名 **全栈** 开发工程师，在公司负责业务架构的搭建和维护工作，目前技术栈是 Nodejs、Typescript、Cloudbase
 
+> 联系我：微信搜索👉 **jay4qqqq**
+
 ## 学习经历
 
 + 2014年，高中毕业于 [江苏省锡山高级中学](http://www.jxshs.cn/)
