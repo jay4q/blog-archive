@@ -11,7 +11,7 @@
 /* 覆盖默认样式 */
 
 html {
-  user-select: none;
+  /* user-select: none; */
   background-color: theme("colors.paper");
 }
 

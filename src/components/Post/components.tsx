@@ -34,6 +34,13 @@ export const components: MdxRemote.Components = {
       </h2>
     )
   },
+  h3: (props: { children: string }) => {
+    return (
+      <h3 className='__h2'>
+        {props.children}
+      </h3>
+    )
+  },
   inlineCode: (props: { children: string }) => {
     return (
       <code className='__code'>
